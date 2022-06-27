@@ -4,16 +4,13 @@
 ```
 npm install
 ```
+## Project run inside docker
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+docker-compose up
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+please create .env file and define backend domain inside 
+
+After docker has run you will see link to website.
+

@@ -1,18 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-card v-for="post in posts" :key="post.id" class="mb-16">
+          <v-card-header><strong>{{ post.title }}</strong></v-card-header>
+          <v-card-content>{{ post.content }}</v-card-content>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
-export default {
+import { defineComponent } from 'vue'
+import {mapGetters} from 'vuex'
+
+export default defineComponent({
   name: 'HomeView',
-  components: {
-    HelloWorld
+  computed: {
+    ...mapGetters(['posts']),
   }
-}
+});
 </script>
